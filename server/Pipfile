@@ -15,6 +15,7 @@ psycopg2-binary = "*"
 python-dotenv = "*"
 flask-cors = "*"
 marshmallow-sqlalchemy = "*"
+gunicorn = "*"
 
 [dev-packages]
 
