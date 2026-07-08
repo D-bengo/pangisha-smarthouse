@@ -26,7 +26,18 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 # Allow React frontend to communicate with Flask
-CORS(app)
+CORS(
+    app,
+    resources={
+        r"/*": {
+            "origins": [
+                "http://localhost:5173",
+                "https://pangisha-smarthouse-client-koddf69m9-d-bengos-projects.vercel.app"
+            ]
+        }
+    },
+    supports_credentials=True
+)
 
 # Initialize extensions
 db.init_app(app)
